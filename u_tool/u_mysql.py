@@ -69,7 +69,7 @@ class MySQL:
         try:
             self.open()
             self.cur.execute("%s;" % sql, L)
-            self.cur.fetchall()
+            result = self.cur.fetchall()
             print("ok")
             msg = "success"
         except Exception as e:
@@ -80,4 +80,4 @@ class MySQL:
         finally:
             self.close()
         # 返回统一状态
-        return msg
+        return result, msg
