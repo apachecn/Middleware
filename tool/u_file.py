@@ -88,6 +88,21 @@ def get_dir_files(dir, filelist=[], status=0, str1=""):
     return sorted(filelist, reverse=False)
 
 
+def create_path2dir(filename):
+    """
+    :desc: 创建文件路径的方法
+    :param: 
+        filename 文件的路径
+    :return:
+    """
+    file_dir = os.path.dirname(filename)
+    print(file_dir)
+    if os.path.exists(file_dir):
+        pass
+    else:
+        os.makedirs(file_dir)
+
+
 # if __name__ == "__main__":
 #     print(getFileSize("../detailhtml/20161103112313.html"))
 #     # 1006.142578kb
